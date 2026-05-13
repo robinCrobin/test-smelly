@@ -185,6 +185,11 @@ O ESLint foi configurado com o plugin <code>eslint-plugin-jest</code> no arquivo
   <figcaption>Figura 1 — Saída de <code>npx eslint .</code> na suíte original.</figcaption>
 </figure>
 
+<figure>
+  <img src="resultado-final-eslint.png" alt="Saída do ESLint na suíte refatorada sem erros e sem avisos">
+  <figcaption>Figura 2 — Saída de <code>npx eslint test/userService.clean.test.js</code> após a refatoração.</figcaption>
+</figure>
+
 <p>
 Os quatro erros nas linhas 44, 46, 49 e 73 correspondem aos <code>expect</code> que dependem do <code>if/else</code> dentro do <code>for</code> (smell 1.1) e ao <code>expect</code> dentro do <code>catch</code> (smell 1.2). O <em>warning</em> da linha 77 é o <code>test.skip</code> com TODO. Depois da refatoração, rodando o ESLint apenas no novo arquivo <code>test/userService.clean.test.js</code>, a ferramenta não reporta nenhum erro nem aviso, e <code>npm test</code> continua passando tanto na suíte antiga quanto na nova — provando que o comportamento foi preservado.
 </p>
